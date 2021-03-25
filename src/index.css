@@ -16,6 +16,11 @@ button {
   outline: none;
 }
 
+a {
+  color: unset;
+  text-decoration: none;
+}
+
 .App {
   background: #fff;
   max-width: 600px;
@@ -65,7 +70,7 @@ button {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(10px + 1vmin);
   color: #fff;
   padding: 0 20px;
 }
@@ -78,20 +83,19 @@ button {
   place-items: center;
 }
 
-.home > button {
+button.toWizard {
   padding: 4px 10px;
   margin-top: 20px;
   color: #fff;
   font-size: 18px;
   background-color: #f1356d;
-  height: 40px;
   width: 100px;
   border: 0.01em solid rgb(255 255 255 / 20%);
   border-radius: 10px;
   box-shadow: none;
 }
 
-.home > button:hover {
+button.toWizard:hover {
   cursor: pointer;
   background: #2f7f94;
   transition: 0.2s all;
@@ -111,7 +115,6 @@ button {
 .comment-list {
   display: flex;
   justify-content: center;
-  align-items: center;
   flex-direction: row;
   flex-wrap: wrap;
 }
@@ -131,6 +134,10 @@ button {
   box-shadow: 0 0 9px 0px #00000070;
   transition: 0.2s all;
   position: relative;
+  flex: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .comment-preview:hover {
   box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
@@ -139,12 +146,12 @@ button {
   cursor: pointer;
   transition: 0.2s all;
 }
-.comment-preview > h4 {
+.comment-preview h4 {
   font-size: 15px;
   color: #2f7f94;
   margin-bottom: 2px;
 }
-.comment-preview:hover > h4 {
+.comment-preview:hover h4 {
   color: #ddd;
   transition: 1s all;
 }
@@ -155,6 +162,9 @@ button {
 .comment-preview:hover > p {
   color: #ddd;
   transition: 1.25s all;
+}
+.comment-preview a {
+  text-decoration: none;
 }
 .delBut {
   position: absolute;
@@ -180,7 +190,60 @@ button {
   transition: 0.25s all;
 }
 
+.comments button {
+  background: #f1356d;
+  color: #fff;
+  font-size: 16px;
+  border: 0;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.25s all;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 30px);
+}
 
+.comment-details > h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  /* color: #f1356d; */
+}
+.comment-details div {
+  margin: 20px 0;
+}
+.comment-details button {
+  background: #f1356d;
+  color: #fff;
+  font-size: 16px;
+  border: 0;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.25s all;
+}
+.comment-details button:hover {
+  box-shadow: 0 1px 6px 2px rgba(68, 67, 67, 0.4);
+  transition: 0.25s all;
+}
+
+.notFound button {
+  background: #f1356d;
+  color: #fff;
+  font-size: 16px;
+  border: 0;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.25s all;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 30px);
+}
+.notFound button:hover {
+  box-shadow: 0 1px 6px 2px rgba(68, 67, 67, 0.4);
+  transition: 0.25s all;
+}
 
 /* LOADER */
 .loader {
@@ -276,4 +339,34 @@ button {
   100% {
     transform: rotate(360deg);
   }
+}
+
+.wizard {
+  width: 70%;
+}
+.formita label {
+  text-align: left;
+  /* display: block; */
+}
+.formita input, .formita textarea, .formita select, .formita checkbox {
+  width: 100%;
+  padding: 6px 10px;
+  margin: 10px 0;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+  display: block;
+}
+.formita select:hover {
+  cursor: pointer;
+}
+.formita button {
+  background: #f1356d;
+  color: #fff;
+  font-size: 18px;
+  border: 0;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
 }
